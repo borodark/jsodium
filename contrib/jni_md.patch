@@ -1,0 +1,6 @@
+33a34,36
+> #ifdef __GNUC__
+> typedef long long jlong;
+> #else
+34a38
+> #endif

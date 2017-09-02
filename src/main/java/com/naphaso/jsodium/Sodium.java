@@ -13,8 +13,11 @@ public final class Sodium {
     static {
         String os = System.getProperty("os.name", "generic").toLowerCase(Locale.ENGLISH);
         if(os.contains("win")) {
-            System.loadLibrary("libjsodium");
-	    System.out.println("crypto loaded");
+            System.out.println("OS is: " + os);
+            System.out.println("Arch is:  " + System.getProperty("os.arch"));
+
+            System.loadLibrary("libjsodium" + (System.getProperty("os.arch").contains("64")?"64":"32"));
+            System.out.println("crypto loaded");
             // throw new RuntimeException("failed to load jsodium, OS isn't supported");
         } else if(os.contains("mac") || os.contains("darwin")) {
             loadLibrary("libjsodium.dylib");

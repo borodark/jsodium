@@ -3,4 +3,4 @@
 *.iml
 build/
 *.o
-
+contrib/jni_md.h
