@@ -18,11 +18,13 @@ fi
 
 ./configure --prefix="$PREFIX" --exec-prefix="$PREFIX" \
                --host=i686-w64-mingw32 && \
-    make -j4 clean && make -j4 # && make -j4 check
+    make -j4 clean && make -j4 && make -j4 check
 
-# For 32 bit  "make check" fails - TODO? 
+#  WIP : For 32 bit  "make check" fails - see https://fedoraproject.org/wiki/MinGW/Configure_wine
 # Wine[https://wiki.winehq.org/Ubuntu]
-# Mono[http://www.mono-project.com/] installed 
+# for Mint dlls are /usr/lib/gcc/i686-w64-mingw32/
+# Mono[http://www.mono-project.com/] installed
+# TODO fix 32 - java fails to load 32 bit dll
 
 # back to project root
 
